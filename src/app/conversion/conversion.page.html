@@ -36,6 +36,7 @@
 
     <!-- Botão para converter -->
     <ion-button expand="full" (click)="convertCurrency()">Converter</ion-button>
+    <ion-button routerLink="/history">Ver Histórico</ion-button>
 
     <!-- Exibe o valor convertido -->
     <div *ngIf="convertedValue !== undefined">

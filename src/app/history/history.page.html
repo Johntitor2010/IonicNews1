@@ -1,13 +1,17 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>history</ion-title>
+    <ion-title>Histórico de Conversões</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">history</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <ion-list>
+    <!-- Exibe cada conversão do histórico -->
+    <ion-item *ngFor="let conversion of conversions">
+      <ion-label>
+        <h2>{{ conversion.amount }} {{ conversion.from }} = {{ conversion.result }} {{ conversion.to }}</h2>
+        <p>{{ conversion.date | date: 'short' }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>
